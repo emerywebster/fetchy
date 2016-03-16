@@ -1,6 +1,10 @@
 var Fetchy = {
     $content: $('.content'),
     $form: $('form'),
+    userInput: '',
+    userInputIsValid: false,
+    appId: '',
+
     toggleLoading: function() {
     	// Toggle loading indicator
     	this.$content.toggleClass('content--loading');
@@ -9,9 +13,7 @@ var Fetchy = {
     	// http://stackoverflow.com/questions/4702000/toggle-input-disabled-attribute-using-jquery
     	this.$form.find('button').prop('disabled', function(i, v) { return !v; });
     },
-    userInput: '',
-    userInputIsValid: false,
-    appId: '',
+
     validate: function(input) {
         // Use regex to test if input is valid. It's valid if:
         // 1. It begins with 'http://itunes'
@@ -27,7 +29,8 @@ var Fetchy = {
             this.appId = '';
         }
     },
-    throwError: function(header, text){
+
+    throwError: function(header, text) {
         // Remove animation class
         this.$content.removeClass('content--error-pop');
  
@@ -42,13 +45,14 @@ var Fetchy = {
  
         this.toggleLoading();
     },
+
     render: function(response){
         var icon = new Image();
         icon.src = response.artworkUrl512;
         icon.onload = function() {
             Fetchy.$content
                 .html(this)
-                .append('<br /><br /><p>' + response.trackName + '</p>')
+                .append('<br /><br /><p><strong>' + response.trackName + '</strong> Actual icon dimensions: ' + this.naturalWidth + '×' + this.naturalHeight + '</p>')
                 .removeClass('content--error');
             Fetchy.toggleLoading();
 
@@ -64,12 +68,14 @@ var Fetchy = {
     }
 }
 
-$(document).ready(function(){
-    Fetchy.$form.on('submit', function(e){
+$(document).ready(function() {
+
+    Fetchy.$form.on('submit', function(e) {
     	e.preventDefault();
     	Fetchy.toggleLoading(); // call the loading function
         Fetchy.userInput = $(this).find('input').val();
     	Fetchy.validate();
+
     	if( Fetchy.userInputIsValid ) {
         	$.ajax({
         		url: "https://itunes.apple.com/lookup?id=" + Fetchy.appId,
@@ -84,12 +90,12 @@ $(document).ready(function(){
     			if(response && response.artworkUrl512 != null){
         			Fetchy.render(response);
     			} else {
-        		Fetchy.throwError(
-            	'Invalid Response',
-            	'The request you made appears to not have an associated icon. Please try a different URL.'
-        );
-    }
-    		})
+        		    Fetchy.throwError(
+            	           'Invalid Response',
+            	           'The request you made appears to not have an associated icon. Please try a different URL.'
+                    );
+                }
+    	    })
     		.fail(function(data) {
     			Fetchy.throwError(
             		'iTunes API Error',
@@ -98,9 +104,9 @@ $(document).ready(function(){
     		});
     	} else {
         	Fetchy.throwError(
-        	'',
+        	'Invalid Link',
         	'Hmm. That didn\'t work. Please try again with a different URL.'
        		);
     	}
-    })
+    });
 });

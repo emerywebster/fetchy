@@ -206,3 +206,12 @@ form {
     left: 0;
     top: 0;
 }
+
+/* Footer */
+footer {
+    margin: 3em 0 1em 0;
+}
+    footer p {
+        font-size: .875em; /* 14/16 */
+        color: #9B9B9B;
+    }
