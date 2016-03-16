@@ -1,0 +1,212 @@
+/* General */
+ 
+*, 
+*:before, 
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+html {
+  box-sizing: border-box;
+  background: #EEEEEE;
+  text-align: center;
+}
+body {
+    font-size: 1em;
+    line-height: 1.5;
+    font-family: Lato, sans-serif;
+    max-width: 43.75em; /* 880/16 */
+    margin: 0 auto;
+    padding: 0;
+    color: #4A4A4A;
+}
+img {
+    max-width: 100%;
+    height: auto;    
+}
+a {
+    color: inherit;
+}
+
+
+/* Header */
+
+header {
+    margin: 2em 0 2em;
+}
+    header h1 {
+        font-family: 'Pacifico', serif;
+        font-size: 4em; 
+        text-shadow: 0px 3px 2px rgba(0,0,0,0.20);
+        color: #FF8837;
+        letter-spacing: 1.28px;
+        margin: 0;
+    }
+        header h1 a {
+            text-decoration: none;
+        }
+    header p {
+        margin: 2em 0 1.5em 0;
+        text-shadow: 0 1px 0px rgba(0, 0, 0, .15);
+        font-size: 1em; /* 14/16 */
+        color: #909090;
+        letter-spacing: 0.28px;
+    }
+
+
+/* Form Input */
+
+form {
+    position: relative;
+}
+    form input{
+        width: 100%;
+        display: block;
+        font-family: 'Lucida Grande', sans-serif;
+        font-size: 1em;
+        padding: .625em .85em;
+        line-height: 1.5em;
+        margin-top: 0;
+        border: 1px solid #DDDDDD;
+        border-radius: 4px 0px 0px 4px;
+        color: #BBBBBB;
+    }
+        form input:focus {
+            border-color: #298cda;
+        }
+    form button {
+        text-decoration: none;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 1.5;
+        color: white;
+        font-size: 1em;
+        border-radius: 0 4px 4px 0;
+        border: 0;
+        outline: 0;
+        text-align: center;
+        -webkit-appearance: none;
+        margin: 0;
+        padding: 0 1.5em;
+        font-family: 'Lato', serif;
+        background: #FF8837;
+        background-image: -webkit-linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+        background-image: -o-linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+        background-image: linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+        box-shadow: inset 0px 2px 2px 0px rgba(255,255,255,.25);
+    }
+        form button:hover {
+            cursor: pointer;
+        }
+        form button:disabled {
+            opacity: .5;
+        }
+
+
+/* Content Styles */
+
+.zero {
+    margin-top:1.5em;
+    color: #909090;
+}
+
+.zero a {
+    color: #00AFFF;
+}
+ 
+.content {
+    margin: 0 auto;
+    word-wrap: break-word; /* for long urls */
+}
+ 
+    .content * { /* do a simple reset on elements in .content */
+        margin: 0;
+        padding: 0;
+    }
+ 
+    .content strong {
+        font-weight: bold;
+        display: block;
+    }
+.content--loading:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .9;
+    z-index: 10;
+}
+ 
+.content--loading:after {
+    content: url('../img/loading.gif');
+    position: absolute;
+    left: 50%;
+    top: 3em;
+    margin-left: -16px;
+    margin-top: -16px;
+    z-index: 11;
+}
+.content--error {
+    background: #FEDCDC;
+    border-radius: 4px;
+    font-family: Lato;
+    font-size: 1em;
+    color: #F36B6B;
+    width: 100%;
+    margin-top: 1.5em;
+    padding: 10px 0;
+    border: 1px solid #FFB0B0;
+
+}
+.content--error-pop {
+    -webkit-animation: pop .15s;
+    -moz-animation: pop .15s;
+    -o-animation: pop .15s;
+    animation: pop .15s;
+}
+ 
+@-webkit-keyframes pop {
+    0%   {-webkit-transform: scale(1);}
+    50%  {-webkit-transform: scale(1.075);}
+    100% {-webkit-transform: scale(1);}
+}
+ 
+@-moz-keyframes pop {
+    0%   {-webkit-transform: scale(1);}
+    50%  {-webkit-transform: scale(1.075);}
+    100% {-webkit-transform: scale(1);}
+}
+ 
+@-o-keyframes pop {
+    0%   {-webkit-transform: scale(1);}
+    50%  {-webkit-transform: scale(1.075);}
+    100% {-webkit-transform: scale(1);}
+}
+ 
+@keyframes pop {
+    0%   {-webkit-transform: scale(1);}
+    50%  {-webkit-transform: scale(1.075);}
+    100% {-webkit-transform: scale(1);}
+}
+
+.results {
+    background: #fff;
+    text-align: center;
+    padding: 2em;
+    margin: 1.5em 0 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    position: relative;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.results img[src*="assets/img/icon-mask.png"] {
+    position: absolute;
+    max-width: 512px;
+}
