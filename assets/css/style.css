@@ -16,9 +16,9 @@ body {
     font-size: 1em;
     line-height: 1.5;
     font-family: Lato, sans-serif;
-    max-width: 43.75em; /* 880/16 */
+    max-width: 55em; /* 880/16 */
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1em;
     color: #4A4A4A;
 }
 img {
@@ -108,24 +108,26 @@ form {
 
 /* Content Styles */
 
-.zero {
-    margin-top:1.5em;
-    color: #909090;
+.wrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 2em;
+    margin: 2em 0 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    position: relative;
 }
-
-.zero a {
-    color: #00AFFF;
-}
+    .wrapper a {
+        color: #00AFFF;
+    }
  
 .content {
+    max-width: 512px;
     margin: 0 auto;
+    position: relative;
     word-wrap: break-word; /* for long urls */
 }
- 
-    .content * { /* do a simple reset on elements in .content */
-        margin: 0;
-        padding: 0;
-    }
  
     .content strong {
         font-weight: bold;
@@ -153,7 +155,7 @@ form {
     z-index: 11;
 }
 .content--error {
-    background: #FEDCDC;
+    background: rgba(255, 221, 221, .17);
     border-radius: 4px;
     font-family: Lato;
     font-size: 1em;
@@ -195,18 +197,12 @@ form {
     100% {-webkit-transform: scale(1);}
 }
 
-.results {
-    background: #fff;
-    text-align: center;
-    padding: 2em;
-    margin: 1.5em 0 2em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-    position: relative;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
+.content img {
+    margin-top: 2em;
 }
 
-.results img[src*="assets/img/icon-mask.png"] {
+.content img[src*="assets/img/icon-mask.png"] {
     position: absolute;
-    max-width: 512px;
+    left: 0;
+    top: 0;
 }

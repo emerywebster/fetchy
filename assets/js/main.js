@@ -48,8 +48,7 @@ var Fetchy = {
         icon.onload = function() {
             Fetchy.$content
                 .html(this)
-                .addClass('results')
-                .append('<p>' + response.trackName + '</p>')
+                .append('<br /><br /><p>' + response.trackName + '</p>')
                 .removeClass('content--error');
             Fetchy.toggleLoading();
 
