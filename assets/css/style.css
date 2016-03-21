@@ -29,7 +29,6 @@ a {
     color: inherit;
 }
 
-
 /* Header */
 
 header {
@@ -54,8 +53,7 @@ header {
         letter-spacing: 0.28px;
     }
 
-
-/* Form Input */
+/* Forms */
 
 form {
     position: relative;
@@ -121,14 +119,12 @@ form {
     .wrapper a {
         color: #00AFFF;
     }
- 
 .content {
     max-width: 512px;
     margin: 0 auto;
     position: relative;
     word-wrap: break-word; /* for long urls */
 }
- 
     .content strong {
         font-weight: bold;
         display: block;
@@ -144,7 +140,6 @@ form {
     opacity: .9;
     z-index: 10;
 }
- 
 .content--loading:after {
     content: url('../img/loading.gif');
     position: absolute;
@@ -172,35 +167,29 @@ form {
     -o-animation: pop .15s;
     animation: pop .15s;
 }
- 
 @-webkit-keyframes pop {
     0%   {-webkit-transform: scale(1);}
     50%  {-webkit-transform: scale(1.075);}
     100% {-webkit-transform: scale(1);}
 }
- 
 @-moz-keyframes pop {
     0%   {-webkit-transform: scale(1);}
     50%  {-webkit-transform: scale(1.075);}
     100% {-webkit-transform: scale(1);}
 }
- 
 @-o-keyframes pop {
     0%   {-webkit-transform: scale(1);}
     50%  {-webkit-transform: scale(1.075);}
     100% {-webkit-transform: scale(1);}
 }
- 
 @keyframes pop {
     0%   {-webkit-transform: scale(1);}
     50%  {-webkit-transform: scale(1.075);}
     100% {-webkit-transform: scale(1);}
 }
-
 .content img {
     margin-top: 2em;
 }
-
 .content img[src*="assets/img/icon-mask.png"] {
     position: absolute;
     left: 0;
@@ -208,6 +197,7 @@ form {
 }
 
 /* Footer */
+
 footer {
     margin: 3em 0 1em 0;
 }
